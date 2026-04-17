@@ -33,26 +33,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name') || this.querySelector('input[type="text"]').value;
-        const email = formData.get('email') || this.querySelector('input[type="email"]').value;
-        const message = formData.get('message') || this.querySelector('textarea').value;
-        
-        // In a real application, you would send this data to a server
-        console.log('Form submission:', { name, email, message });
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
-}
 
 // Animation on scroll
 function animateOnScroll() {
